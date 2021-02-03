@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #33ccff 0%, #ccffcc 100%);
+            background-repeat: no-repeat;
+            height: 618px;
+        }
+        
+        .cont {
+            background-image: url("https://images.all-free-download.com/images/graphiclarge/christmas_light_decoration_200266.jpg");
+            margin: 30px 65px 0px 120px;
+            height: 570px;
+            width: 840px;
+            border-radius: 2%;
+            box-shadow: 10px 10px 5px grey;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            opacity: 95%;
+        }
+        
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+        }
+        
+        .input {
+            margin-left: 40px;
+            width: 50%;
+            padding: 12px;
+            opacity: 60%;
+        }
+        
+        .input:hover {
+            opacity: 1;
+            transition: 1s;
+        }
+        
+        .gender {
+            font-family: cursive;
+            margin-left: 40px;
+            padding: 10px;
+            color: wheat;
+        }
+        
+        .gender:hover {
+            color: rgba(0, 0, 0, .6);
+            text-shadow: 3px 2px 3px rgba(255, 255, 255, .2);
+        }
+        
+        .button {
+            border-radius: 4px;
+            width: 15%;
+            margin-top: 4%;
+            line-height: 2.2;
+            opacity: 60%;
+        }
+        
+        .button:hover {
+            background-color: #008CBA;
+            opacity: 1;
+            transition: 0.7s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+        <h1><i>Register</i></h1>
+        <form name="form" onsubmit="return myfunction()" method="POST">
+            <input type="text" placeholder="Name" name="names" id="names" class="input" required><br><br>
+            <input type="number" placeholder="Roll Number" class="input" min="1" max="50" required><br><br>
+            <input type="email" placeholder="Email" class="input" required><br><br>
+            <label for="password">
+                <input type="password" name="password" id="password" placeholder="Enter Password" class="input" minlength="8"
+                    required>
+            </label><br><br>
+            <label for="confirmpassword">
+                <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm Password" class="input" minlength="8" required>
+            </label><br><br><label class="gender"> Gender: <input type="radio" name="gender">Male
+            <input type="radio" name="gender">Female
+           </label>
+            <br><br>
+            <center><input type="submit" value="Signup" class="button"></center>
+        </form>
+    </div>
+    <script>
+        function myfunction() {
+            var a = document.form.names.value;
+            var pass1 = document.form.password.value;
+            var pass2 = document.form.confirmpassword.value;
+            if (!isNaN(a)) {
+                alert("name should contain only alphabets");
+            }
+            if (pass1 != pass2) {
+                alert("please check your password");
+            } else {
+                window.open("samplesignup.html");
+            }
+        }
+    </script>
+</body>
+
+</html>

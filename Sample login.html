@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <style>
+        body {
+            position: relative;
+            background-color: #48dbfb;
+            background-image: linear-gradient(315deg, #48dbfb 0%, #d3d3d3 74%);
+        }
+        
+        .cont {
+            justify-content: center;
+            position: fixed;
+            width: 700px;
+            height: 400px;
+            background-color: #f2f3f4;
+            opacity: 83%;
+            margin: 10% 27% auto 26%;
+            border-radius: 5%;
+        }
+        
+        .cont1 img {
+            float: left;
+            position: fixed;
+            margin: 5% 5%;
+            /*height: 32%;
+            border-radius: 4% 0;*/
+            height: 40%;
+            width: 20%;
+            border-radius: 50%;
+        }
+        
+        .cont2 {
+            margin-left: 60%;
+            margin-top: 5%;
+        }
+        
+        .cont2 form input {
+            position: inherit;
+            width: 6cm;
+            border-radius: 7% white;
+            margin-top: 5%;
+            padding: 3%;
+        }
+        
+        input {
+            border-radius: 7px;
+            background-color: lavender;
+            border-color: #48dbfb;
+        }
+        
+        button {
+            width: 2.5cm;
+            height: 1cm;
+            background-color: tomato;
+            border-radius: 7px;
+            border-color: black;
+            opacity: 1;
+            transition: 0.3s;
+        }
+        
+        button:hover {
+            background-color: green;
+            border-color: green;
+            opacity: 1;
+        }
+        
+        .c {
+            margin-left: 80%;
+            margin-top: -5.5%;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cont">
+        <div class="cont1">
+            <img src="https://i.pinimg.com/736x/91/00/d4/9100d49bda28a88a46745f3e3e003eb9.jpg">
+        </div>
+        <div class="cont2">
+            <h1><i>Student Login</i></h1>
+            <form name="form" clickbutton="return myfunction()" method="POST">
+                <input type="text" name="email" id="email" placeholder="Email" required><br><br>
+                <input type="password" name="psw" id="psw" placeholder="Password" minlength="8" maxlength="12" required><br><br>
+                <button type="submit" onclick="myfunction()">Submit</button><br>
+            </form>
+        </div>
+        <div class="c"><button><a href="Signup.html">Signup</a></button></div>
+    </div>
+    <script>
+        function myfunction() {
+            var pat = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            var emailcheck = document.form.email.value;
+            var pass = document.form.psw.value;
+            if (!pat.test(emailcheck)) {
+                alert('invalid emailid');
+            } else {
+                if (emailcheck == "abc@gmail.com") {
+                    if (pass == "12345678") {
+                        window.open('sample.html');
+                    } else {
+                        alert('check your password');
+                    }
+                } else {
+                    alert('please check your email');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
